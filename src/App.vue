@@ -9,7 +9,6 @@
 import UserPane from './components/UserPane.vue';
 import NewsBox from './components/NewsBox.vue';
 
-
 export default {
   name: 'app',
   data() {
