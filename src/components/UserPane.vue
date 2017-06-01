@@ -18,7 +18,7 @@ export default {
     },
     userAvatarSrc: {
       type: String,
-      default: './asset/logo.png'
+      default: '../assets/logo.png'
     }
   }
 }
