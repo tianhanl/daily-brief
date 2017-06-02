@@ -37,6 +37,9 @@ export default {
   display: flex;
   align-items: stretch;
   justify-content: center;
+  box-sizing: border-box;
+  padding: 1em;
+  min-height: 100vh;
 }
 
 h1,

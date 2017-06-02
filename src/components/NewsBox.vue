@@ -1,6 +1,8 @@
 <template>
   <div class="news-box">
-    <h3>{{msg}}</h3>
+    <div class="news-box-head">
+      <h2>Today's top stories</h2>
+    </div>
   </div>
 </template>
 script <script>
@@ -19,8 +21,6 @@ export default {
   box-sizing: border-box;
   position: relative;
   flex: 2 1 60%;
-  min-height: 100vh;
+  padding: 1em;
 }
 </style>
-
-
