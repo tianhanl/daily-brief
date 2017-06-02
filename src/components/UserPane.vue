@@ -1,10 +1,10 @@
 <template>
   <div class="user-pane">
-    <div class="user-pane head">
+    <div class="haer-pane-head">
       <img :src="userAvatarSrc" class="user-avatar" alt="user avatar" />
       <h3 class="user-name">{{username}}</h3>
     </div>
-    <section class="user-pane info-box">
+    <section class="info-box">
       <h3>Welcome {{username}}</h3>
     </section>
   </div>
@@ -16,15 +16,34 @@ export default {
       type: String,
       default: 'test'
     },
-    userAvatarSrc: {
+    userLocation: {
       type: String,
-      default: require('../assets/logo.png')
+      default: 'Guangzhou'
+    }
+  },
+  data: function () {
+    return {
+      userAvatarSrc: require('../assets/avatar.png')
     }
   }
+
 }
 </script>
 <style>
+.user-pane {
+  width: 30%;
+  border: solid 1px;
+  min-height: 100vh;
+  padding: 1em;
+  box-sizing: border-box;
+}
 
+.user-pane-head {}
+
+.user-pane .user-avatar {
+  width: 120px;
+  height: 120px;
+}
 </style>
 
 
