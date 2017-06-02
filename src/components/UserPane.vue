@@ -1,6 +1,6 @@
 <template>
   <div class="user-pane">
-    <div class="haer-pane-head">
+    <div class="user-pane-head">
       <img :src="userAvatarSrc" class="user-avatar" alt="user avatar" />
       <h3 class="user-name">{{username}}</h3>
     </div>
@@ -38,7 +38,13 @@ export default {
   box-sizing: border-box;
 }
 
-.user-pane-head {}
+.user-pane-head {
+  border-bottom: 2px solid;
+}
+
+.user-pane-head h3 {
+  margin: 0.2em 0;
+}
 
 .user-pane .user-avatar {
   width: 120px;
