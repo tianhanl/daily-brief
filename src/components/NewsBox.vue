@@ -18,7 +18,7 @@ export default {
 .news-box {
   box-sizing: border-box;
   position: relative;
-  width: 60%;
+  flex: 2 1 60%;
   min-height: 100vh;
 }
 </style>

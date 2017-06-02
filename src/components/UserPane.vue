@@ -33,7 +33,6 @@ export default {
 .user-pane {
   width: 30%;
   border: solid 1px;
-  min-height: 100vh;
   padding: 1em;
   box-sizing: border-box;
 }

@@ -34,6 +34,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
 }
 
 h1,
