@@ -1,16 +1,23 @@
 <template>
   <div class="news-box">
     <div class="news-box-head">
-      <h2>Today's top stories</h2>
+      <h1>Today's top stories</h1>
+      <news-card v-for="news in newsList" :news-name="news.name" :key="news.priority"></news-card>
     </div>
   </div>
 </template>
 script <script>
+import { config } from '../config.js';
+import NewsCard from './NewsCard.vue';
 export default {
   name: 'news-box',
+  components: {
+    'news-card': NewsCard
+  },
   data: function () {
     return {
-      msg: 'test'
+      msg: 'test',
+      newsList: config.newsList
     }
   }
 
