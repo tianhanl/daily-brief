@@ -1,6 +1,6 @@
 # daily-brief
 
-> A simple program using vue to integrate all the everyday information and newsfeed into one page
+> A simple program using vue to integrate everyday information and newsfeed into one page
 
 ## Build Setup
 
