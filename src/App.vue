@@ -8,7 +8,7 @@
 <script>
 import UserPane from './components/UserPane.vue';
 import NewsBox from './components/NewsBox.vue';
-import { config } from './config.js';
+import config from './config.js';
 
 export default {
   name: 'app',
@@ -39,7 +39,8 @@ export default {
   justify-content: center;
   box-sizing: border-box;
   padding: 1em;
-  min-height: 100vh;
+  overflow: hidden;
+  height: 100vh;
 }
 
 h1,
