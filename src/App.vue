@@ -1,11 +1,14 @@
 <template>
   <div id="app">
-    <user-pane :username="username" :userLocation="userLocation"></user-pane>
-    <news-box></news-box>
+    <!--<user-pane :username="username" :userLocation="userLocation"></user-pane>
+                      <news-box></news-box>-->
+    <h1>Daily Brief</h1>
+    <account-pane></account-pane>
   </div>
 </template>
 
 <script>
+import AccountPane from './components/AccountPane.vue';
 import UserPane from './components/UserPane.vue';
 import NewsBox from './components/NewsBox.vue';
 import config from './config.js';
@@ -20,7 +23,8 @@ export default {
   },
   components: {
     'user-pane': UserPane,
-    'news-box': NewsBox
+    'news-box': NewsBox,
+    'account-pane': AccountPane
   }
 }
 </script>
@@ -34,12 +38,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   position: relative;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
   box-sizing: border-box;
   padding: 1em;
-  overflow: hidden;
   height: 100vh;
 }
 
@@ -60,5 +60,6 @@ li {
 
 a {
   color: #42b983;
+  text-decoration: none;
 }
 </style>
