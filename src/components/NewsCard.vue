@@ -1,7 +1,7 @@
 <template>
-  <section class="news-card">
-    <h2 class="news-name">{{newsNameTitle}}</h2>
-    <div v-for="story in stories" class="news-item">
+  <section class="news-card card">
+    <h2 class="card-name">{{newsNameTitle}}</h2>
+    <div v-for="story in stories" class="news-item" :key='story.link'>
       <a :href="story.link">{{story.title}}</a>
     </div>
   </section>
@@ -48,11 +48,6 @@ export default {
   padding: 1em;
   padding-top: 0;
   overflow: hidden;
-}
-
-.news-name {
-  margin-top: 0;
-  text-transform: capitalize;
 }
 
 .news-item {

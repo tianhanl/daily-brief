@@ -1,0 +1,49 @@
+<template>
+  <div class="card weather-card">
+    <h2 class="card-name">Weather</h2>
+    <p>
+      Current Weather is {{weatherText}}
+      <br> Current Temperatur is {{temperatureText}}
+    </p>
+  </div>
+</template>
+<script>
+var axios = require('axios')
+export default {
+  props: {
+    userLocation: {
+      type: string,
+      default: 'Guangzhou'
+    }
+  },
+  data: function () {
+    return {
+      weatherText: 'N/A',
+      temperature: 'N/A'
+    }
+  },
+  computed: {
+    temperatureText: function () {
+      return this.temperature + '°c'
+    }
+  },
+  created: function () {
+    this.updateWeather();
+  },
+  methods: {
+    updateWeather: function () {
+      let self = this;
+      // remember to cache this, since this in axios is different
+      axios.get('/api/weather')
+        .then(function (response) {
+          let weatherResult = response.data.results[0];
+          self.weatherText = weatherResult.now.text;
+          self.temperature = weatherResult.now.temperature;
+        }, function (response) {
+          console.log(response);
+        });
+    }
+  }
+}
+</script>
+

@@ -1,16 +1,12 @@
 <template>
   <div id="app">
-    <!--<user-pane :username="username" :userLocation="userLocation"></user-pane>
-                      <news-box></news-box>-->
     <h1>Daily Brief</h1>
-    <account-pane></account-pane>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import AccountPane from './components/AccountPane.vue';
-import UserPane from './components/UserPane.vue';
-import NewsBox from './components/NewsBox.vue';
 import config from './config.js';
 
 export default {
@@ -20,11 +16,6 @@ export default {
       username: config.username,
       userLocation: config.userLocation,
     };
-  },
-  components: {
-    'user-pane': UserPane,
-    'news-box': NewsBox,
-    'account-pane': AccountPane
   }
 }
 </script>
@@ -43,7 +34,10 @@ export default {
   height: 100vh;
 }
 
-h1,
+h1 {
+  font-size: 4em;
+}
+
 h2 {
   font-weight: normal;
 }
