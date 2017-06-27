@@ -6,16 +6,9 @@
 </template>
 
 <script>
-import config from './config.js';
 
 export default {
-  name: 'app',
-  data: function () {
-    return {
-      username: config.username,
-      userLocation: config.userLocation,
-    };
-  }
+  name: 'app'
 }
 </script>
 
