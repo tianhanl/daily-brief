@@ -22,7 +22,6 @@ export default {
       newsList: config.newsList
     }
   }
-
 }
 </script>
 <style>

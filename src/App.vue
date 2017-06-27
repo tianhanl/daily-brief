@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import AccountPane from './components/AccountPane.vue';
 import config from './config.js';
 
 export default {

@@ -6,9 +6,9 @@
   </div>
 </template>
 <script>
-import NewsBox from './NewsBox';
-import UserCard from './UserCard';
-import WeatherCard from './WeatherCard';
+import NewsBox from './NewsBox.vue';
+import UserCard from './UserCard.vue';
+import WeatherCard from './WeatherCard.vue';
 export default {
   components: {
     'news-box': NewsBox,
