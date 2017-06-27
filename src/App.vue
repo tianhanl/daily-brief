@@ -6,17 +6,9 @@
 </template>
 
 <script>
-import AccountPane from './components/AccountPane.vue';
-import config from './config.js';
 
 export default {
-  name: 'app',
-  data: function () {
-    return {
-      username: config.username,
-      userLocation: config.userLocation,
-    };
-  }
+  name: 'app'
 }
 </script>
 
