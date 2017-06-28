@@ -21,7 +21,7 @@ const router = new Router({
 });
 
 router.beforeEach(function (to, from, next) {
-  let authFile = false;
+  let authFile = true;
   if (to.meta.requireAuth) {
     if (authFile) {
       next();

@@ -1,9 +1,7 @@
 <template>
-  <div class="user-card">
-    <div class="user-pane-head">
-      <img :src="userAvatarSrc" class="user-avatar" alt="user avatar">
-      <h3>Welcome, {{username}}</h3>
-    </div>
+  <div class="user-card card">
+    <img :src="userAvatarSrc" class="user-avatar" alt="user avatar">
+    <h3>Welcome, {{username}}</h3>
   </div>
 </template>
 <script>
@@ -25,3 +23,9 @@ export default {
   }
 }
 </script>
+<style>
+.user-avatar {
+  width: 120px;
+  height: 120px;
+}
+</style>

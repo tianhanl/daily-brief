@@ -12,7 +12,7 @@ var axios = require('axios')
 export default {
   props: {
     userLocation: {
-      type: string,
+      type: String,
       default: 'Guangzhou'
     }
   },
