@@ -1,12 +1,10 @@
 <template>
   <div id="account-box">
     <nav class="account-select">
-      <a href="#register" @click="showRegister">Register</a>
-      <a href="#login" @click="showLogin">Log In</a>
+      <a href="#" @click="showRegister">Register</a>
+      <a href="#" @click="showLogin">Log In</a>
     </nav>
-  
-    <register v-if="isRegister"></register>
-    <login v-else></login>
+    <component :is="currentView"></component>
   
   </div>
 </template>
@@ -18,7 +16,7 @@ import register from './Register.vue';
 export default {
   data: function () {
     return {
-      isRegister: true
+      currentView: 'login'
     }
   },
   components: {
@@ -27,13 +25,13 @@ export default {
   },
   methods: {
     showRegister: function () {
-      this.isRegister = true;
+      this.currentView = 'register';
+      return false;
 
     },
     showLogin: function () {
-      this.isRegister = false;
-    },
-    register: function () {
+      this.currentView = 'login';
+      return false;
     }
   }
 }
