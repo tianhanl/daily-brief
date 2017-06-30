@@ -1,6 +1,6 @@
 <template>
   <div class="user-card card">
-    <img :src="userAvatarSrc" class="user-avatar" alt="user avatar">
+    <img :src="avatarSrc" class="user-avatar" alt="user avatar">
     <h3>Welcome, {{username}}</h3>
   </div>
 </template>
@@ -11,14 +11,11 @@ export default {
   props: {
     username: {
       type: String,
-      default: 'test'
+      required: true
     },
-  },
-  data: function () {
-    return {
-      // provide default image for avatar
-      userAvatarSrc: require('../assets/avatar.png'),
-
+    avatarSrc: {
+      type: String,
+      required: true
     }
   }
 }

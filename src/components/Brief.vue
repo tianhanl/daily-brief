@@ -1,7 +1,7 @@
 <template>
   <div class="brief">
-    <user-card></user-card>
-    <weather-card></weather-card>
+    <user-card :username="username" :avatar-src="avatarSrc"></user-card>
+    <!--<weather-card></weather-card>-->
     <!--<news-box></news-box>-->
   </div>
 </template>
@@ -15,6 +15,14 @@ export default {
     // 'news-box': NewsBox,
     'user-card': UserCard,
     'weather-card': WeatherCard
+  },
+  computed: {
+    username: function () {
+      return this.$store.state.userConfig.username || 'user';
+    },
+    avatarSrc: function () {
+      return this.$store.state.userConfig.userSrc || require('../assets/avatar.png');
+    }
   }
 }
 </script>
