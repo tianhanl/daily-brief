@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Brief from './components/Brief.vue';
 import Account from './components/Account.vue';
+import http from './http';
 
 Vue.use(Router);
 
@@ -21,7 +22,7 @@ const router = new Router({
 });
 
 router.beforeEach(function (to, from, next) {
-  let authFile = true;
+  let authFile = http.getCredential();
   if (to.meta.requireAuth) {
     if (authFile) {
       next();

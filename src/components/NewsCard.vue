@@ -7,7 +7,7 @@
   </section>
 </template>
 <script>
-var axios = require('axios');
+import http from '../http.js';
 
 export default {
   name: 'news-card',
@@ -29,10 +29,7 @@ export default {
   methods: {
     requestStories: function () {
       var self = this;
-      axios({
-        method: 'get',
-        url: '/api/news/' + self.newsName.split('-')[0],
-      }).then(function (response) {
+      http.getStories(self.newsName).then(function (response) {
         self.stories = response.data;
       }).catch(function (response) {
         console.log(response);

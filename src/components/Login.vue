@@ -7,7 +7,7 @@
 </template>
 
 <script>
-var axios = require('axios');
+import http from '../http.js';
 
 export default {
   name: 'Login',
@@ -24,22 +24,21 @@ export default {
       }
     },
     toLogin: function () {
-      let loginParam = {
-        account: this.username,
-        password: this.password
-      }
-      axios({
-        method: 'get',
-        url: './api/account',
-        params: loginParam
-      }).then(function (response) {
-        // succeed
-        let expireDays = 1000 * 60 * 60 * 24 * 15;
-        this.$router.push('/')
-      }, function (response) {
-        // error
-        console.log(response);
-      })
+      //   let loginParam = {
+      //     account: this.username,
+      //     password: this.password
+      //   }
+      //   http.login.then(function (response) {
+      //     // succeed
+      //     let expireDays = 1000 * 60 * 60 * 24 * 15;
+      //     this.$router.push('/')
+      //   }, function (response) {
+      //     // error
+      //     console.log(response);
+      //   })
+      // }
+      http.setCookie('session', '12345', null);
+      this.$router.push('/');
     }
   }
 }

@@ -33,7 +33,7 @@ export default {
   methods: {
     updateWeather: function () {
       let self = this;
-      // remember to cache this, since this in axios is different
+      // remember to store this, since this in axios is different
       axios.get('/api/weather')
         .then(function (response) {
           let weatherResult = response.data.results[0];
