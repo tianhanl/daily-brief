@@ -1,5 +1,6 @@
 <template>
   <div class="user-card card">
+    <h2 class="card-name">User</h2>
     <img :src="avatarSrc" class="user-avatar" alt="user avatar">
     <h3>Welcome, {{username}}</h3>
   </div>
@@ -8,14 +9,12 @@
 import config from '../config.js';
 
 export default {
-  props: {
-    username: {
-      type: String,
-      required: true
+  computed: {
+    username: function () {
+      return this.$store.state.userConfig.username ? this.$store.state.userConfig.username : 'N/A';
     },
-    avatarSrc: {
-      type: String,
-      required: true
+    avatarSrc: function () {
+      return this.$store.state.userConfig.avatarSrc ? this.$store.state.userConfig.avatarSrc : '#';
     }
   }
 }

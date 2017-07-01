@@ -13,13 +13,26 @@ const setCookie = function (key, value, expiredays) {
   document.cookie = key + '=' + value + ((expiredays == null) ? '' : 'expires=' + exdate.toGMTString());
 };
 
-const getCredential = function () {
-  var arr;
-  var reg = new RegExp("(^| )" + 'session' + "=([^;]*)(;|$)");
+const getCookie = function (name) {
+  var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
   if (arr = document.cookie.match(reg))
     return (arr[2]);
   else
     return null;
+};
+
+const removeCookie = function (key) {
+  var exp = new Date();
+  exp.setTime(exp.getTime() - 1);
+  var current = getCookie(key);
+  if (current) {
+    document.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  }
+};
+
+const getCredential = function () {
+  // incase the way how credential was used changes
+  return getCookie('session');
 }
 
 
@@ -31,13 +44,25 @@ const login = function (loginParams) {
   });
 };
 
+const getUserConfig = function () {
+  // the back end will finde the appropriate user with the cookies
+  // return fake data for testing
+  return {
+    username: 'test',
+    avatarSrc: require('./assets/avatar.png'),
+    uid: null,
+    userLocation: null,
+    userLanguage: null,
+    newsList: null
+  }
+};
+
 const getStories = function (newsName) {
   return axios({
     method: 'get',
     url: '/api/news/' + newsName.split('-')[0],
   });
 };
-
 
 const getWeather = function () {
 
@@ -77,5 +102,9 @@ export default {
   login: login,
   getStories: getStories,
   setCookie: setCookie,
-  getCredential: getCredential
+  removeCookie: removeCookie,
+  getCookie: getCookie,
+  getCredential: getCredential,
+  getUserConfig: getUserConfig,
+  getWeather: getWeather
 };

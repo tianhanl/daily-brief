@@ -38,6 +38,7 @@ export default {
       //   })
       // }
       http.setCookie('session', '12345', null);
+      this.$store.commit('updateUserConfig', http.getUserConfig);
       this.$router.push('/');
     }
   }

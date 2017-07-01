@@ -8,14 +8,8 @@
   </div>
 </template>
 <script>
-var axios = require('axios')
+import http from '../http.js';
 export default {
-  props: {
-    userLocation: {
-      type: String,
-      default: 'Guangzhou'
-    }
-  },
   data: function () {
     return {
       weatherText: 'N/A',
@@ -34,14 +28,14 @@ export default {
     updateWeather: function () {
       let self = this;
       // remember to store this, since this in axios is different
-      axios.get('/api/weather')
-        .then(function (response) {
-          let weatherResult = response.data.results[0];
-          self.weatherText = weatherResult.now.text;
-          self.temperature = weatherResult.now.temperature;
-        }, function (response) {
-          console.log(response);
-        });
+
+      http.getWeather().then(function (response) {
+        let weatherResult = response.data.results[0];
+        self.weatherText = weatherResult.now.text;
+        self.temperature = weatherResult.now.temperature;
+      }, function (response) {
+        console.log(response);
+      });
     }
   }
 }

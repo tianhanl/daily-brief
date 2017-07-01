@@ -1,11 +1,13 @@
 <template>
   <div class="brief">
-    <user-card :username="username" :avatar-src="avatarSrc"></user-card>
-    <!--<weather-card></weather-card>-->
+    <button @click="logout">logout</button>
+    <user-card></user-card>
+    <weather-card></weather-card>
     <!--<news-box></news-box>-->
   </div>
 </template>
 <script>
+import http from '../http.js';
 // import NewsBox from './NewsBox.vue';
 import UserCard from './UserCard.vue';
 import WeatherCard from './WeatherCard.vue';
@@ -16,12 +18,11 @@ export default {
     'user-card': UserCard,
     'weather-card': WeatherCard
   },
-  computed: {
-    username: function () {
-      return this.$store.state.userConfig.username || 'user';
-    },
-    avatarSrc: function () {
-      return this.$store.state.userConfig.userSrc || require('../assets/avatar.png');
+  methods: {
+    logout: function () {
+      http.removeCookie('session');
+      this.$router.push('/account');
+      return false;
     }
   }
 }
