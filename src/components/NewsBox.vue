@@ -22,19 +22,8 @@ export default {
       newsList: config.newsList
     }
   }
-
 }
 </script>
 <style>
-.news-box {
-  box-sizing: border-box;
-  position: relative;
-  flex: 2 1 60%;
-  padding: 1em 1.5em;
-  max-height: 100vh;
-}
 
-.news-box-body {
-  max-height: 75vh;
-}
 </style>
