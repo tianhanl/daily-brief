@@ -1,8 +1,5 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { createStore } from 'vuex';
 import mutations from './mutations';
-
-Vue.use(Vuex);
 
 const state = {
   domain: './',
@@ -16,7 +13,7 @@ const state = {
   }
 };
 
-export default new Vuex.Store({
+export default createStore({
   state,
   mutations
 });
