@@ -3,10 +3,7 @@ export default {
   avatarSrc: './assets/avatar.png',
   userLocation: 'guangzhou',
   userLanguage: 'en',
-  newsList: [{
-    name: 'zhihu-daily',
-    priority: '1'
-  }],
+  newsList: [],
   weatherAPISrc: 'https://api.seniverse.com/v3/weather/'
 };
 

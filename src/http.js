@@ -57,12 +57,6 @@ const getUserConfig = function () {
   }
 };
 
-const getStories = function (newsName) {
-  return axios({
-    method: 'get',
-    url: '/api/news/' + newsName.split('-')[0],
-  });
-};
 
 const getWeather = function () {
 
@@ -100,7 +94,6 @@ const getWeather = function () {
 
 export default {
   login: login,
-  getStories: getStories,
   setCookie: setCookie,
   removeCookie: removeCookie,
   getCookie: getCookie,
