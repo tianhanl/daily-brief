@@ -1,12 +1,10 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import Brief from './components/Brief.vue';
 import Account from './components/Account.vue';
 import http from './http';
 
-Vue.use(Router);
-
-const router = new Router({
+const router = createRouter({
+  history: createWebHashHistory(),
   routes: [{
     path: '/',
     name: 'brief',
